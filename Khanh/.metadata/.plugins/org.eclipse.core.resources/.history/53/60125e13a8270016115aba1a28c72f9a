@@ -1,0 +1,32 @@
+package BanHang;
+
+public class ChiNhanh {
+	private String chiNhanh;
+	private int idChinhanh;
+	private String tenNhanh;
+	private String diaChi;
+	public String getChiNhanh() {
+		return chiNhanh;
+	}
+	public void setChiNhanh(String chiNhanh) {
+		this.chiNhanh = chiNhanh;
+	}
+	public int getIdChinhanh() {
+		return idChinhanh;
+	}
+	public void setIdChinhanh(int idChinhanh) {
+		this.idChinhanh = idChinhanh;
+	}
+	public String getTenNhanh() {
+		return tenNhanh;
+	}
+	public void setTenNhanh(String tenNhanh) {
+		this.tenNhanh = tenNhanh;
+	}
+	public String getDiaChi() {
+		return diaChi;
+	}
+	public void setDiaChi(String diaChi) {
+		this.diaChi = diaChi;
+	}
+}

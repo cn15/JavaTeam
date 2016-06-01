@@ -1,0 +1,35 @@
+package BanHang;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+
+public class Chay {
+
+	public static void main(String[] args) {
+		int a, b, c, i;
+		ArrayList<Hang> objhang = new ArrayList<Hang>();
+		Hang a2 = new Hang();
+		try {
+			BufferedReader iK = new BufferedReader(new InputStreamReader(System.in));
+			System.out.print("\nNhap so luong Hang: ");
+			String a1 = iK.readLine();
+			a = Integer.parseInt(a1);
+			for(i=0; i<a; i++)
+			{
+				System.out.print("\nNhap ID cua mat hang thu "+(i+1)+": ");
+				String id1 = iK.readLine();
+				int id = Integer.parseInt(id1);
+				a2.setIdHang(id);
+				System.out.print("\nNhap ID nhan vien ban hang: ");
+				String id2 = iK.readLine();
+				int idnv = Integer.parseInt(id2);
+				a2.setIdNvien(idnv);
+				System.out.print("\nNhap ten hang: ");
+			}
+		} catch (Exception e) {
+			System.out.print(e.toString());
+		}
+	}
+
+}
