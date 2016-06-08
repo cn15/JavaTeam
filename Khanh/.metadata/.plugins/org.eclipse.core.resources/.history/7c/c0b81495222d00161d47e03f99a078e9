@@ -1,0 +1,7 @@
+package XepHLV;
+
+public class LienDoanBongDa {
+private int idLiendoan;
+private String quocgia;
+private int quyluongHlv;
+}

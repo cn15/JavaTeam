@@ -1,9 +1,0 @@
-package BanHang;
-
-public class Hang {
-	private String hang;
-	private int idHang;
-	private int idNvien;
-	private String tenHang;
-	private int soLuong;
-}
