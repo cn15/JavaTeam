@@ -1,9 +1,0 @@
-package XepHLV;
-
-public class Xep {
-
-	public static void main(String[] args) {
-		ArrayList<Team> t1 = new ArrayList<Team>();
-	}
-
-}

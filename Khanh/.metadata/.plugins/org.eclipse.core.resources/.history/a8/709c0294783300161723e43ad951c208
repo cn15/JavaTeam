@@ -1,0 +1,15 @@
+package Ovr;
+
+public class Nhap {
+
+	public static void main(String[] args) {
+		try{
+			Human a = new Students();
+		}
+		catch (Exception e){
+			System.out.println(e.toString());
+		}
+
+	}
+
+}

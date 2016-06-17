@@ -1,0 +1,15 @@
+package Ovr;
+
+public class Students extends Human {
+	private String Class;
+
+	public String getClass() {
+		return Class;
+	}
+
+	public void setClass(String lop) {
+		Class = lop;
+	}
+
+	
+}

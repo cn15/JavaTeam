@@ -1,0 +1,50 @@
+package InterfaceTest;
+
+public class Students extends Human implements iUniversity{
+	int i=0;
+	float testResult;
+	public float getTestResult() {
+		return testResult;
+	}
+
+	public void setTestResult(float testResult) {
+		this.testResult = testResult;
+	}
+
+	@Override
+	public void major(float x) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void duration(String faculty) {
+		System.out.print("\nThoi gian hoc: ");
+		if(faculty.equals("Network")){
+			System.out.print("\n4 nam.");
+		}
+		if(faculty.equals("Embedded")){
+			System.out.print("\n5 nam.");
+		}
+		if(faculty.equals("Software")){
+			System.out.print("\n3 nam.");
+		}
+	}
+	public void applyToUniversity(float testResult, String university) {
+		if(university.equals("DUT")){
+		if(testResult>=21){
+			System.out.print("\nBan du dieu kien vao truong BKDN.");
+		}
+		else if(university.equals("ITU")){
+			if(testResult>=20){
+				System.out.print("\nBan du dieu kien vao truong DH CNTT.");
+			}
+		}
+		else if(university.equals("DTU")){
+			if(testResult>=16){
+				System.out.print("\nBan du dieu kien vao truong Duy Tan.");
+			}
+		}
+		}
+	}
+}

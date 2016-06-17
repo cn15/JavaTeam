@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;Human.java&apos; to &apos;InterfaceTest.iUniversity.java&apos;&#x0A;- Original project: &apos;Ngay1606&apos;&#x0A;- Destination element: &apos;InterfaceTest.iUniversity.java&apos;&#x0A;- Original element: &apos;Ovr.Human.java&apos;" description="Copy compilation unit" destination="=Ngay1706/src&lt;InterfaceTest{iUniversity.java" element1="/src&lt;Ovr{Human.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1466126728025" units="1" version="1.0"/>
+</session>

@@ -1,0 +1,20 @@
+package Ovr;
+
+public class Students extends Human {
+	private String Lop;
+
+	public String getLop() {
+		return Lop;
+	}
+
+	public void setLop(String lop) {
+		Lop = lop;
+	}
+
+	public void Learn() {
+		System.out.print("\nTen: " + getName());
+		System.out.print("\nTuoi: " + getAge());
+		System.out.print("\nGioi tinh: " + getSex());
+		System.out.print("\nLop: " + getLop());
+	}
+}

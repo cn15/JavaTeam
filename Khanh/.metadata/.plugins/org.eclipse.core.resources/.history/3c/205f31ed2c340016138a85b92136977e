@@ -1,0 +1,7 @@
+package InterfaceTest;
+
+public interface iUniversity extends iIT{
+	public String faculty;
+public void duration(faculty);
+public void checkCondition(String faculty, float x);
+}

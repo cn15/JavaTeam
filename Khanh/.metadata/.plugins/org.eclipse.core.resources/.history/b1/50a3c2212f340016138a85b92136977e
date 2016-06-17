@@ -1,0 +1,26 @@
+package InterfaceTest;
+
+public class Students extends Human implements iUniversity{
+
+	@Override
+	public void major(float x) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void duration(String faculty) {
+		System.out.print("\nThoi gian hoc: ");
+		if(faculty.equals("Network")){
+			System.out.print("\n4 nam.");
+		}
+		if(faculty.equals("Embedded")){
+			System.out.print("\n5 nam.");
+		}
+		if(faculty.equals("Software")){
+			System.out.print("\n3 nam.");
+		}
+	}
+
+
+}
