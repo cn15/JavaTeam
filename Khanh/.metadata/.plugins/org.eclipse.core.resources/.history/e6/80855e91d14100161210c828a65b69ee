@@ -1,0 +1,49 @@
+package Test2GD;
+
+import java.awt.*;
+
+import javax.swing.*;
+
+public class Hinh extends JPanel {
+	public void vuong(Graphics g) {
+
+		Graphics2D hv = (Graphics2D) g;
+
+		hv.drawLine(75, 25, 175, 25);
+		hv.drawLine(175, 25, 175, 125);
+		hv.drawLine(175, 125, 75, 125);
+		hv.drawLine(75, 125, 75, 25);
+	}
+	public void chunhat(Graphics g) {
+
+		Graphics2D hv = (Graphics2D) g;
+
+		hv.drawLine(25, 25, 225, 25);
+		hv.drawLine(225, 25, 225, 125);
+		hv.drawLine(225, 125, 25, 125);
+		hv.drawLine(25, 125, 25, 25);
+	}
+	public void tgiac(Graphics g) {
+
+		Graphics2D hv = (Graphics2D) g;
+
+		hv.drawLine(125, 25, 190, 125);
+		hv.drawLine(190, 125, 60, 125);
+		hv.drawLine(60, 125, 125, 25);
+	}
+	public void tron(Graphics g) {
+
+		Graphics2D hv = (Graphics2D) g;
+
+		hv.drawLine(75, 25, 175, 25);
+		hv.drawLine(175, 25, 175, 125);
+		hv.drawLine(175, 125, 75, 125);
+		hv.drawLine(75, 125, 75, 25);
+	}
+	@Override
+	public void paintComponent(Graphics g) {
+
+		super.paintComponent(g);
+		tgiac(g);
+	}
+}

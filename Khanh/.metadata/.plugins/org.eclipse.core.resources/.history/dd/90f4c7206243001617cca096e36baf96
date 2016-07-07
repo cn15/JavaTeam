@@ -1,0 +1,88 @@
+package Test2GD;
+
+import javax.swing.JFrame;
+
+public class Test3 {
+	static String[] cbm1 = new String[117];
+	static JFrame f = new JFrame();
+	static String cbm = "Mini game from CBM STUDIO ";
+	static String cbm2 = "";
+
+	Test3() {
+		f.setLocation(350, 150);
+		f.setSize(500, 350);
+		f.setLayout(null);
+		f.setVisible(true);
+		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		for (int j = 0; j < 117; j++) {
+			cbm1[j] = "";
+		}
+		for (int i = 0; i < 117; i++) {
+			try {
+				Thread.sleep(50);
+				cbm1[116]="";
+				if (i <= 25) {
+					if (i > 0) {
+						for (int j = i; j > 0; j--) {
+							cbm1[j] = cbm1[j - 1];
+						}
+					}
+					String a="";
+					for(int j=116; j>i; j--){
+						a=a+" ";
+					}
+					cbm1[116]=a;
+					cbm1[0] = "" + cbm.charAt(25 - i);
+					cbm2=cbm1[0]+cbm2;
+					cbm1[0]="";
+				}
+				else{
+					for (int j = i; j > 0; j--) {
+						cbm1[j] = cbm1[j - 1];
+					}
+					if(i<=92){
+					String a="";
+					for(int j=116; j>i; j--){
+						a=a+" ";
+					}
+					cbm1[116]=a;
+					}
+					if(i==26){
+						cbm1[0] = " ";
+					}
+					else{
+						cbm1[0] = " " + cbm1[0];
+					}
+					if(i>92){
+						String c="";
+					for(int j=92; j<i; j++){
+						c=c+" ";
+					}
+					cbm1[0]=cbm1+c;
+						String b="";
+						for(int j=115; j>=i; j--){
+							b=cbm.charAt(j - i)+b;
+						}
+						cbm2=b;
+					}
+					if(i==116){
+						for (int j = 0; j < 117; j++) {
+							cbm1[j] = "";
+						}
+						cbm2="";
+						i=0;
+						continue;
+					}
+				}
+				f.setTitle(cbm1[0]+cbm2+cbm1[116]);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	}
+
+	public static void main(String args[]) {
+		new Test3();
+	}
+}

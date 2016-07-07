@@ -1,0 +1,21 @@
+package Test2GD;
+
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+
+public class Testt {
+public void main(String args[]){
+	try{
+	    AudioInputStream audioInputStream =
+	        AudioSystem.getAudioInputStream(
+	            this.getClass().getResource("sing.wav"));
+	    Clip clip = AudioSystem.getClip();
+	    clip.open(audioInputStream);
+	    clip.start();
+	}
+	catch(Exception ex)
+	{
+	}
+}
+}

@@ -1,0 +1,79 @@
+package Test2GD;
+
+import java.awt.*;
+import java.util.Random;
+import java.util.Timer;
+import java.util.TimerTask;
+
+import javax.swing.*;
+
+public class Hinh extends JPanel {
+	int i = 0;
+
+	public void vuong(Graphics g) {
+
+		Graphics2D hv = (Graphics2D) g;
+
+		hv.drawLine(75, 25, 175, 25);
+		hv.drawLine(175, 25, 175, 125);
+		hv.drawLine(175, 125, 75, 125);
+		hv.drawLine(75, 125, 75, 25);
+	}
+
+	public void chunhat(Graphics g) {
+
+		Graphics2D hv = (Graphics2D) g;
+
+		hv.drawLine(25, 25, 225, 25);
+		hv.drawLine(225, 25, 225, 125);
+		hv.drawLine(225, 125, 25, 125);
+		hv.drawLine(25, 125, 25, 25);
+	}
+
+	public void tgiac(Graphics g) {
+
+		Graphics2D hv = (Graphics2D) g;
+
+		hv.drawLine(125, 25, 190, 120);
+		hv.drawLine(190, 120, 60, 120);
+		hv.drawLine(60, 120, 125, 25);
+	}
+
+	public void tron(Graphics g) {
+
+		Graphics2D hv = (Graphics2D) g;
+
+		hv.drawOval(74, 24, 100, 100);
+	}
+
+	@Override
+	public void paintComponent(Graphics g) {
+
+		super.paintComponent(g);
+		Random rd = new Random();
+		Timer timer = new Timer();
+		timer.scheduleAtFixedRate(new TimerTask() {
+			  @Override
+			  public void run() {
+				  timer.schedule(new TimerTask() {
+						@Override
+						public void run() {
+							i = rd.nextInt(4) + 1;
+							if (i == 1) {
+								vuong(g);
+							} else if (i == 2) {
+								chunhat(g);
+							} else if (i == 3) {
+								tgiac(g);
+							} else {
+								tron(g);
+							}
+						}
+					}, 1 * 1000);
+					
+				  }
+			}, 1*2000,1*2000);
+		
+
+	}
+}

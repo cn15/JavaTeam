@@ -1,5 +1,0 @@
-package Ovr;
-
-public class Students extends Human{
-
-}
