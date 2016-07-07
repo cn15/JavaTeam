@@ -10,9 +10,7 @@
 <fullyQualifiedTypeName name="javax.accessibility.Accessible"/>
 <fullyQualifiedTypeName name="javax.swing.JLabel"/>
 <fullyQualifiedTypeName name="java.awt.image.BufferedImage"/>
-<fullyQualifiedTypeName name="java.io.File"/>
 <fullyQualifiedTypeName name="javax.imageio.ImageIO"/>
-<fullyQualifiedTypeName name="java.io.IOException"/>
 <fullyQualifiedTypeName name="java.awt.Canvas"/>
 <fullyQualifiedTypeName name="java.awt.Toolkit"/>
 <fullyQualifiedTypeName name="java.awt.Image"/>
@@ -43,8 +41,14 @@
 <fullyQualifiedTypeName name="javax.swing.JPanel"/>
 <fullyQualifiedTypeName name="java.util.Random"/>
 <fullyQualifiedTypeName name="Test2GD.Test2"/>
-<fullyQualifiedTypeName name="javax.print.attribute.standard.Media"/>
 <fullyQualifiedTypeName name="javax.sound.sampled.AudioSystem"/>
 <fullyQualifiedTypeName name="javax.sound.sampled.AudioInputStream"/>
 <fullyQualifiedTypeName name="javax.sound.sampled.Clip"/>
+<fullyQualifiedTypeName name="javax.print.attribute.standard.Media"/>
+<fullyQualifiedTypeName name="java.io.File"/>
+<fullyQualifiedTypeName name="javax.print.DocFlavor.URL"/>
+<fullyQualifiedTypeName name="javax.sound.sampled.UnsupportedAudioFileException"/>
+<fullyQualifiedTypeName name="javax.sound.sampled.LineUnavailableException"/>
+<fullyQualifiedTypeName name="java.io.IOException"/>
+<fullyQualifiedTypeName name="java.net.URL"/>
 </qualifiedTypeNameHistroy>

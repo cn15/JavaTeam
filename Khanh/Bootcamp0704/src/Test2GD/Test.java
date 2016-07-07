@@ -2,6 +2,7 @@ package Test2GD;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -9,9 +10,12 @@ import javax.print.DocFlavor.URL;
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.*;
 
 public class Test {
+	
 	static Test2 t2 = new Test2();
 	static String cbm = "CBM STUDIO";
 	static String user = "";
@@ -23,17 +27,6 @@ public class Test {
 	static JButton quit = new JButton("Q U I T");
 
 	Test() {
-		try{
-			java.net.URL url = f.getClass().getClassLoader().getResource("panther1.wav");
-		    AudioInputStream audioInputStream =
-		        AudioSystem.getAudioInputStream(url);
-		    Clip clip = AudioSystem.getClip();
-		    clip.open(audioInputStream);
-		    clip.start();
-		}
-		catch(Exception ex)
-		{
-		}
 		hello.setBounds(135, 60, 300, 20);
 		user1.setBounds(110, 150, 100, 20);
 		user2.setBounds(190, 145, 200, 30);
@@ -50,6 +43,7 @@ public class Test {
 		f.setLayout(null);
 		f.setVisible(true);
 		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
 	}
 
 	public static void pl() {
@@ -57,14 +51,16 @@ public class Test {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				user = user2.getText();
+				//Bat buoc nhap User.
 				if (user.equals("")) {
 					hello.setText("  Nhap Username de bat dau choi!");
 				} else {
+					//Xac nhan
 					int output = JOptionPane.showConfirmDialog(f, "Hello " + user + "! Click YES to continue.",
 							"CBM Studio", JOptionPane.YES_NO_OPTION);
 
 					if (output == JOptionPane.YES_OPTION) {
-
+						//Chuyen giao dien.
 						f.setVisible(false);
 						Timer timer = new Timer();
 						timer.schedule(new TimerTask() {
@@ -73,7 +69,7 @@ public class Test {
 								
 								t2.f.setVisible(true);
 								t2.user.setText("   Player: " + user);
-
+								//Thiet lap Title chuyen dong tu trai qua phai.
 								for (int j = 0; j < 117; j++) {
 									t2.cbm1[j] = "";
 								}
@@ -135,14 +131,6 @@ public class Test {
 										e.printStackTrace();
 									}
 								}
-								try {
-									AudioInputStream audioInputStream = AudioSystem
-											.getAudioInputStream(this.getClass().getResource("sing.wav"));
-									Clip clip = AudioSystem.getClip();
-									clip.open(audioInputStream);
-									clip.start();
-								} catch (Exception ex) {
-								}
 							}
 						}, 1 * 300);
 					} else if (output == JOptionPane.NO_OPTION) {
@@ -153,6 +141,7 @@ public class Test {
 		quit.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				//Thoat game
 				int output = JOptionPane.showConfirmDialog(f, "Are you sure you want to exit?", "CBM Studio",
 						JOptionPane.YES_NO_OPTION);
 

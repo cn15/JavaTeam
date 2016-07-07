@@ -7,6 +7,7 @@ import java.awt.GridLayout;
 import java.awt.MediaTracker;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -15,6 +16,8 @@ import javax.print.attribute.standard.Media;
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.*;
 
 public class Test2 {
@@ -84,6 +87,7 @@ public class Test2 {
 		f.setLayout(null);
 		f.setVisible(false);
 		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
 	}
 
 	public static void play() {
@@ -99,6 +103,7 @@ public class Test2 {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				//Tao mang chua so lan xuat hien 4 hinh.
 				j = 0;
 				for (int j1 = 0; j1 < 4; j1++) {
 					aa[j1] = 0;
@@ -110,6 +115,7 @@ public class Test2 {
 						if (j < 10) {
 							Random rd = new Random();
 							if (j == 9) {
+								//Loai bo truong hop 2 hinh cung xuat hien nhieu nhat.
 								for (int j1 = 0; j1 < 1; j1++) {
 									int j2 = 0;
 									h.i = rd.nextInt(4) + 1;
@@ -141,6 +147,7 @@ public class Test2 {
 									b = h.i;
 								}
 							}
+							//Xuat hinh.
 							rs.repaint();
 							timer.schedule(new TimerTask() {
 								@Override
@@ -161,6 +168,7 @@ public class Test2 {
 							hcn.setVisible(true);
 							htg.setVisible(true);
 							ht.setVisible(true);
+							//Dem thoi gian 2s tra loi.
 							while (i >= 0) {
 								time2.setValue(i);
 								i = i - 5;
@@ -171,15 +179,34 @@ public class Test2 {
 							}
 							if ((hv.isSelected() == true) || (hcn.isSelected() == true) || (htg.isSelected() == true)
 									|| ((ht.isSelected() == true))) {
+								//Het thoi gian & da lua chon cau tra loi.
 								play3.setVisible(true);
 								time2.setValue(i);
 								i=-1;
 							} else if ((i <= 0) && (hv.isSelected() == false) && (hcn.isSelected() == false)
 									&& (htg.isSelected() == false) && (ht.isSelected() == false)) {
+								//Het thoi gian & chua lua chon cau tra loi.
 								play3.setVisible(true);
 								diem = 0;
 								score.setText("   Score: " + diem);
 								result.setText("Hết thời gian!");
+								try{
+									java.net.URL url = this.getClass().getClassLoader().getResource("goat.wav");
+								    AudioInputStream audioInputStream =
+								        AudioSystem.getAudioInputStream(url);
+								    Clip clip = AudioSystem.getClip();
+								    clip.open(audioInputStream);
+								    clip.start();
+								}
+								catch(UnsupportedAudioFileException e123)
+								{
+								}
+								catch(LineUnavailableException et){
+									
+								}
+								catch(IOException en)
+								{
+								}
 								play3.setVisible(true);
 								hv.setVisible(false);
 								hcn.setVisible(false);
@@ -195,11 +222,31 @@ public class Test2 {
 		hv.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				//An cac lua chon con lai
 				hv.setEnabled(false);
 				hcn.setVisible(false);
 				htg.setVisible(false);
 				ht.setVisible(false);
 				if (b == 1) {
+					//Truong hop lua chon dung dap an.
+					try{
+					//Chay nhac.
+					java.net.URL url = this.getClass().getClassLoader().getResource("ding.WAV");
+				    AudioInputStream audioInputStream =
+				        AudioSystem.getAudioInputStream(url);
+				    Clip clip = AudioSystem.getClip();
+				    clip.open(audioInputStream);
+				    clip.start();
+				}
+				catch(UnsupportedAudioFileException e123)
+				{
+				}
+				catch(LineUnavailableException et){
+					
+				}
+				catch(IOException en)
+				{
+				}
 					result.setText("Trả lời chính xác!");
 					score.setText("   Score: " + diem + " +1");
 					diem = diem + 1;
@@ -207,7 +254,26 @@ public class Test2 {
 						diem2 = diem;
 						hscore.setText("   High score: " + diem2);
 					}
+					
 				} else {
+					//Truong hop chon sai dap an
+					try{
+						java.net.URL url = this.getClass().getClassLoader().getResource("meo.wav");
+					    AudioInputStream audioInputStream =
+					        AudioSystem.getAudioInputStream(url);
+					    Clip clip = AudioSystem.getClip();
+					    clip.open(audioInputStream);
+					    clip.start();
+					}
+					catch(UnsupportedAudioFileException e123)
+					{
+					}
+					catch(LineUnavailableException et){
+						
+					}
+					catch(IOException en)
+					{
+					}
 					diem = 0;
 					score.setText("   Score: " + diem);
 					result.setText("Không chính xác!");
@@ -222,6 +288,23 @@ public class Test2 {
 				htg.setVisible(false);
 				ht.setVisible(false);
 				if (b == 2) {
+					try{
+						java.net.URL url = this.getClass().getClassLoader().getResource("ding.WAV");
+					    AudioInputStream audioInputStream =
+					        AudioSystem.getAudioInputStream(url);
+					    Clip clip = AudioSystem.getClip();
+					    clip.open(audioInputStream);
+					    clip.start();
+					}
+					catch(UnsupportedAudioFileException e123)
+					{
+					}
+					catch(LineUnavailableException et){
+						
+					}
+					catch(IOException en)
+					{
+					}
 					result.setText("Trả lời chính xác!");
 					score.setText("   Score: " + diem + " +1");
 					diem = diem + 1;
@@ -230,6 +313,23 @@ public class Test2 {
 						hscore.setText("   High score: " + diem2);
 					}
 				} else {
+					try{
+						java.net.URL url = this.getClass().getClassLoader().getResource("meo.wav");
+					    AudioInputStream audioInputStream =
+					        AudioSystem.getAudioInputStream(url);
+					    Clip clip = AudioSystem.getClip();
+					    clip.open(audioInputStream);
+					    clip.start();
+					}
+					catch(UnsupportedAudioFileException e123)
+					{
+					}
+					catch(LineUnavailableException et){
+						
+					}
+					catch(IOException en)
+					{
+					}
 					diem = 0;
 					score.setText("   Score: " + diem);
 					result.setText("Không chính xác!");
@@ -244,6 +344,23 @@ public class Test2 {
 				hv.setVisible(false);
 				ht.setVisible(false);
 				if (b == 3) {
+					try{
+						java.net.URL url = this.getClass().getClassLoader().getResource("ding.WAV");
+					    AudioInputStream audioInputStream =
+					        AudioSystem.getAudioInputStream(url);
+					    Clip clip = AudioSystem.getClip();
+					    clip.open(audioInputStream);
+					    clip.start();
+					}
+					catch(UnsupportedAudioFileException e123)
+					{
+					}
+					catch(LineUnavailableException et){
+						
+					}
+					catch(IOException en)
+					{
+					}
 					result.setText("Trả lời chính xác!");
 					score.setText("   Score: " + diem + " +1");
 					diem = diem + 1;
@@ -252,6 +369,23 @@ public class Test2 {
 						hscore.setText("   High score: " + diem2);
 					}
 				} else {
+					try{
+						java.net.URL url = this.getClass().getClassLoader().getResource("meo.wav");
+					    AudioInputStream audioInputStream =
+					        AudioSystem.getAudioInputStream(url);
+					    Clip clip = AudioSystem.getClip();
+					    clip.open(audioInputStream);
+					    clip.start();
+					}
+					catch(UnsupportedAudioFileException e123)
+					{
+					}
+					catch(LineUnavailableException et){
+						
+					}
+					catch(IOException en)
+					{
+					}
 					diem = 0;
 					score.setText("   Score: " + diem);
 					result.setText("Không chính xác!");
@@ -266,6 +400,23 @@ public class Test2 {
 				htg.setVisible(false);
 				hv.setVisible(false);
 				if (b == 4) {
+					try{
+						java.net.URL url = this.getClass().getClassLoader().getResource("ding.WAV");
+					    AudioInputStream audioInputStream =
+					        AudioSystem.getAudioInputStream(url);
+					    Clip clip = AudioSystem.getClip();
+					    clip.open(audioInputStream);
+					    clip.start();
+					}
+					catch(UnsupportedAudioFileException e123)
+					{
+					}
+					catch(LineUnavailableException et){
+						
+					}
+					catch(IOException en)
+					{
+					}
 					result.setText("Trả lời chính xác!");
 					score.setText("   Score: " + diem + " +1");
 					diem = diem + 1;
@@ -274,6 +425,23 @@ public class Test2 {
 						hscore.setText("   High score: " + diem2);
 					}
 				} else {
+					try{
+						java.net.URL url = this.getClass().getClassLoader().getResource("meo.wav");
+					    AudioInputStream audioInputStream =
+					        AudioSystem.getAudioInputStream(url);
+					    Clip clip = AudioSystem.getClip();
+					    clip.open(audioInputStream);
+					    clip.start();
+					}
+					catch(UnsupportedAudioFileException e123)
+					{
+					}
+					catch(LineUnavailableException et){
+						
+					}
+					catch(IOException en)
+					{
+					}
 					diem = 0;
 					score.setText("   Score: " + diem);
 					result.setText("Không chính xác!");
@@ -284,6 +452,7 @@ public class Test2 {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				//Reset cac bien.
 				h.i = 0;
 				for (int j1 = 0; j1 < 10; j1++) {
 					a[j1] = 0;

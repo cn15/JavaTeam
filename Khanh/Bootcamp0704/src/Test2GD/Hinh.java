@@ -50,15 +50,14 @@ public class Hinh extends JPanel {
 	public void paintComponent(Graphics g) {
 
 		super.paintComponent(g);
-		Random rd = new Random();
-						if (i == 1) {
-							vuong(g);
-						} else if (i == 2) {
-							chunhat(g);
-						} else if (i == 3) {
-							tgiac(g);
-						} else if(i==4) {
-							tron(g);
-						}
+		if (i == 1) {
+			vuong(g);
+		} else if (i == 2) {
+			chunhat(g);
+		} else if (i == 3) {
+			tgiac(g);
+		} else if (i == 4) {
+			tron(g);
+		}
 	}
 }
